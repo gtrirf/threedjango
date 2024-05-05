@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Detail</title>
+</head>
+<body>
+{% if product.image %}
+    <img src="{{ product.image.url }}"/><br>
+{% endif %}
+Model: {{ product.model }}<br>
+Price: {{ product.price }}<br>
+Make: {{ product.make }}<br>
+Category: {{ product.category }}<br>
+Body: {{ product.body }}<hr/>
+
+<a href="{% url 'products:get_info' %}" >Home</a><br>
+<a href="{% url 'products:update_products' product.pk %}" >Update</a><br>
+<a href="{% url 'products:delete_products' product.pk %}" >Delete</a><br>
+
+</body>
+</html>
